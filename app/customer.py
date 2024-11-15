@@ -17,7 +17,7 @@ class Customer:
 
     def calculate_products_cost(self, shop: Shop,
                                 print_info: bool = False) -> float:
-        product_coast = sum([shop.products[key] * self.product_cart[key]
+        product_cost = sum([shop.products[key] * self.product_cart[key]
                              for key in self.product_cart])
         if print_info:
             date = datetime(2021, 1, 4, 12, 33, 41)
@@ -30,10 +30,10 @@ class Customer:
                 if price % 1 == 0:
                     price = int(price)
                 print(f"{value} {key}s for {price} dollars")
-            print(f"Total cost is {product_coast} dollars\n"
+            print(f"Total cost is {product_cost} dollars\n"
                   "See you again!\n")
 
-        return product_coast
+        return product_cost
 
     def calculate_travel_expenses(self, shop: Shop,
                                   fuel_price: float) -> float:
@@ -61,7 +61,7 @@ class Customer:
             print(f"{self.name} rides to {selected_shop_name}\n")
         else:
             print(f"{self.name} doesn't have enough money "
-                  f"to make a purchase in any shop\n")
+                  f"to make a purchase in any shop")
             return
         selected_shop_instance = None
         for shop in shops:
