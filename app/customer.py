@@ -17,8 +17,8 @@ class Customer:
 
     def calculate_products_cost(self, shop: Shop,
                                 print_info: bool = False) -> float:
-        product_cost = sum([shop.products[key] * self.product_cart[key]
-                             for key in self.product_cart])
+        product_cost = sum([shop.products[key] * self.product_cart[key] for key
+                            in self.product_cart])
         if print_info:
             date = datetime(2021, 1, 4, 12, 33, 41)
             date_str = date.strftime("%d/%m/%Y %H:%M:%S")
